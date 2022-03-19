@@ -1,0 +1,58 @@
+@import "./styles/config/fonts";
+@import "./styles/config/reset";
+@import "./styles/config/variables";
+@import "./styles/config/global";
+
+.dark {
+    --color-bg-primary: #2d3748;
+    --color-bg-secondary: #283141;
+    --color-text-primary: #f7fafc;
+    --color-text-secondary: #e2e8f0;
+    --color-text-accent: #81e6d9;
+}
+
+.light {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #edf2f7;
+    --color-text-primary: #2d3748;
+    --color-text-secondary: #4a5568;
+    --color-text-accent: #2b6cb0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        min-height: 100%;
+        position: relative;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        text-rendering: optimizeSpeed;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: var(--base-font-size);
+        line-height: var(--base-line-height);
+        font-family: var(--base-font-family);
+        font-weight: 400;
+    }
+}
+
+.loader {
+    border-top-color: #3498db;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
